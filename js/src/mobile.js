@@ -5,7 +5,7 @@
   var res = $('.reservation_wrap');
   var resCloseBtn = res.find('.close_btn').children('button');
   // console.log('mobile');
-
+  var consent = $('#consent');
 
   // header
 
@@ -49,12 +49,20 @@ introPlay.on('click', function(e){
   introVideo.get(0).play();
 });
 
-intro.find('.close_btn').on('click', function(e){
+intro.find('.close_btn').on('click', function (e) {
   e.preventDefault();
   introVideo.get(0).pause();
   media.currentTime = 0;
   media.fadeOut();
 });
+
+consent.find('.close_btn').on('click', function (e) {
+    e.preventDefault();
+    // consent.slideUp();
+    consent.parent().slideUp();
+    // consent.remove();
+    console.log('check')
+  });
 
 
 })(jQuery);

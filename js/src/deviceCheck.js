@@ -6,7 +6,7 @@
   var afterWinW;
 
   var deviceCheck = {
-    mobile : { min : 320,  max : 639   },
+    mobile : { min : 240,  max : 639   },
     tablet : { min : 640,  max : 1023  },
     pcbase : { min : 1024, max : 1365  },
     laptop : { min : 1366, max : 1599  },

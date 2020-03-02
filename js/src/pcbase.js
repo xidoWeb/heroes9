@@ -1,4 +1,4 @@
-
+(function($){
 // var impact = $('#headBox').find('.menu').find('.impack_check');
 
 var gnb = $('#gnb');
@@ -6,7 +6,7 @@ var gnbMenu = $('.menu').find('li').children('a');
 var res = $('.reservation_wrap');
 var resCloseBtn = res.find('.close_btn').children('button');
 // console.log('mobile');
-
+var consent = $('#consent').parent();
 
 
 gnbMenu.on('click', function(){
@@ -51,3 +51,12 @@ resCloseBtn.on('click', function (e) {
    media.currentTime = 0;
    media.fadeOut();
  });
+
+
+ consent.find('.close_btn').children('button').on('click', function (e) {
+   e.preventDefault();
+   consent.slideDown();
+   // consent.remove();
+ });
+
+ })(jQuery);
