@@ -1,0 +1,630 @@
+@font-face {
+  font-family: "nyz-l";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Eoe_Zno_L.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-family: "nyz-l", "noto sans", "Gothic A1", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, ul, li, ol, dl, dt, dd, p, pre, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+table, thead, tbody, tfoot, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid #777;
+}
+
+a {
+  color: #777;
+  text-decoration: none;
+}
+a:hover {
+  color: #f07;
+}
+a:focus {
+  outline: 2px solid #f06;
+}
+
+abbr {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #f06;
+}
+button:hover {
+  background-color: #fa0;
+}
+button:focus {
+  outline: 2px solid #f06;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #f06;
+}
+
+main, header, footer, aside, nav, section, article, figure, figcaption {
+  display: block;
+}
+
+form, fieldset, legend {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+input {
+  box-sizing: border-box;
+  text-indent: 0.5rem;
+  cursor: pointer;
+}
+
+button {
+  border: 0;
+  background-color: #07f;
+  color: #fff;
+  cursor: pointer;
+}
+
+select,
+text-area {
+  box-sizing: border-box;
+}
+
+input[type=text]:hover,
+input[type=password]:hover,
+input[type=search]:hover,
+input[type=url]:hover,
+input[type=email]:hover,
+input[type=tel]:hover,
+text-area:hover,
+select:hover {
+  background-color: #fdc;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=url]:focus,
+input[type=email]:focus,
+input[type=tel]:focus,
+text-area:focus,
+select:focus {
+  background-color: #fcd;
+}
+
+.hidden,
+.hidden_wrap a > span,
+.hidden_wrap button > span {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -100;
+  overflow: hidden;
+}
+
+.hidden_wrap a,
+.hidden_wrap button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-rendering: auto;
+  align-items: flex-start;
+  border: 0;
+  /* -webkit-writing-mode:horizontal-tb !important;  -webkit-appearance:button;  */
+}
+
+.clearfix:after,
+.clearfix::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+
+.float_array {
+  width: 100%;
+  height: auto;
+}
+.float_array:after, .float_array::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.float_array > li {
+  float: left;
+  height: 100%;
+}
+.float_array > li:last-child {
+  margin-right: 0 !important;
+}
+
+#wrap, .wrap {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.intro {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.icon_key {
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: inherit;
+  transform: translate(-0.3rem, 0.6rem);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@keyframes infRoll {
+  0% {
+    transform: translate(-50%, -1rem) rotateY(0);
+  }
+  100% {
+    transform: translate(-50%, -0.8rem) rotateY(180deg);
+  }
+}
+@keyframes infRoll2 {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+.head_wrap {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #171717;
+}
+
+#headBox {
+  position: relative;
+  margin: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1280px;
+  height: 85px;
+}
+
+h1 {
+  float: left;
+  width: 150px;
+  height: 60px;
+}
+h1 > a {
+  background-image: url("../../img/heroes9_logo.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+h1 > a:focus, h1 > a:hover {
+  outline: 0;
+  transform: scale(1.2);
+  background-image: url("../../img/heroes_logo.png");
+  background-size: contain;
+}
+
+#gnb {
+  float: right;
+  width: 700px;
+  height: auto;
+  padding: 5px;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+#gnb a:focus {
+  outline: 0;
+}
+#gnb .handheld {
+  display: none;
+}
+#gnb .menu {
+  margin: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1280px;
+  font-size: 1.4rem;
+}
+#gnb .menu > li {
+  float: none;
+  display: inline-block;
+  margin-right: 20px;
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+#gnb .menu > .action a, #gnb .menu a:hover {
+  color: #D4C098;
+  position: relative;
+}
+#gnb .menu > .action a:before, #gnb .menu > .action a::before, #gnb .menu a:hover:before, #gnb .menu a:hover::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  /* transform:translate(-50%, -1.2rem); */
+  width: 0.8rem;
+  height: 1.4rem;
+  animation: infRoll 1.5s infinite alternate;
+  background-image: url("../../img/header/SVG/nav_point.svg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+#gnb .menu > .action a:after, #gnb .menu > .action a::after, #gnb .menu a:hover:after, #gnb .menu a:hover::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 80%;
+  left: 10%;
+  width: 80%;
+  height: 4px;
+  background-image: url("../../img/header/SVG/line_t3.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+#gnb .menu > .impack_check {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 0;
+}
+#gnb .menu > .impack_check > a {
+  float: right;
+  line-height: 56px;
+  width: 100%;
+  height: 65px;
+  font-weight: 700;
+  background-color: #9C0000;
+}
+#gnb .menu > .impack_check > a:focus {
+  background-color: #D4C098;
+  color: #9C0000;
+}
+#gnb .menu > .impack_check > a:focus:before, #gnb .menu > .impack_check > a:focus::before {
+  content: " ";
+  display: none;
+}
+#gnb .menu > .impack_check > a:focus > i {
+  animation: infRoll2 1.5s infinite alternate;
+}
+#gnb .menu > .impack_check .icon_key {
+  background-image: url("../../img/header/SVG/res_point.svg");
+}
+#gnb .menu a {
+  display: inline;
+  color: #ffffff;
+  padding: 12px;
+}
+
+@media only screen and (max-width: 1023px) {
+  #headBox {
+    width: 100%;
+    height: 60px;
+  }
+
+  h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 6rem;
+    height: 3rem;
+  }
+  h1 > a {
+    background-image: url("../../img/heroes9_logo.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  #gnb {
+    float: left;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  #gnb > .handheld {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  #gnb > .handheld > .menu_bar {
+    position: relative;
+    z-index: 100;
+    background: transparent;
+  }
+  #gnb > .handheld > .menu_bar:focus {
+    outline: 0;
+  }
+  #gnb > .handheld > .menu_bar i {
+    display: block;
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-1px);
+    border-top: 2px solid #fff;
+    transition: all 0.3s ease;
+  }
+  #gnb > .handheld > .menu_bar i:before, #gnb > .handheld > .menu_bar i::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -14px;
+    left: 0;
+    width: 150%;
+    border-top: 2px solid #fff;
+    transition: all 0.3s ease;
+  }
+  #gnb > .handheld > .menu_bar i:after, #gnb > .handheld > .menu_bar i::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 150%;
+    border-top: 2px solid #fff;
+    transition: all 0.3s ease;
+  }
+  #gnb > .handheld.action > button i {
+    border-color: transparent;
+  }
+  #gnb > .handheld.action > button i:before, #gnb > .handheld.action > button i::before {
+    content: " ";
+    border-color: #D4C098;
+    transform-origin: 0 0;
+    top: 0;
+    transform: translateY(-1rem) scale(1.3) rotate(42deg);
+  }
+  #gnb > .handheld.action > button i:after, #gnb > .handheld.action > button i::after {
+    content: " ";
+    border-color: #D4C098;
+    transform-origin: 0 100%;
+    bottom: 0;
+    transform: translateY(0.1rem) scale(1.3) rotate(-42deg);
+  }
+  #gnb > .handheld.action + .menu_wrap {
+    display: block;
+    margin-top: 50px;
+  }
+  #gnb > .handheld.action + .menu_wrap > .menu > li {
+    display: block;
+    position: relative;
+    text-align: left;
+    margin-bottom: 2.5rem;
+    background-color: transparent;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  #gnb > .handheld.action + .menu_wrap > .menu > li > a {
+    display: inline;
+    float: none;
+    padding: 1rem;
+    padding-right: 5rem;
+  }
+  #gnb > .handheld.action + .menu_wrap > .menu > li.action a:before, #gnb > .handheld.action + .menu_wrap > .menu > li.action a:before, #gnb > .handheld.action + .menu_wrap > .menu > li:focus a:before, #gnb > .handheld.action + .menu_wrap > .menu > li:focus a:before, #gnb > .handheld.action + .menu_wrap > .menu > li:hover a:before, #gnb > .handheld.action + .menu_wrap > .menu > li:hover a:before {
+    content: " ";
+    width: 5rem;
+    height: 2.5rem;
+    top: 50%;
+    left: -3.5rem;
+    transform: translateY(-50%) rotate(-90deg);
+    animation: none;
+  }
+  #gnb > .handheld.action + .menu_wrap > .menu > li.action a:after, #gnb > .handheld.action + .menu_wrap > .menu > li.action a:after, #gnb > .handheld.action + .menu_wrap > .menu > li:focus a:after, #gnb > .handheld.action + .menu_wrap > .menu > li:focus a:after, #gnb > .handheld.action + .menu_wrap > .menu > li:hover a:after, #gnb > .handheld.action + .menu_wrap > .menu > li:hover a:after {
+    content: " ";
+    display: none;
+    background-image: none;
+  }
+  #gnb .menu_wrap {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #171717;
+    padding: 5rem 2.5rem;
+    overflow: scroll;
+  }
+  #gnb .menu_wrap > .menu {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-bottom: 15rem;
+  }
+}
+.reservation_wrap {
+  position: fixed;
+  z-index: 900;
+  bottom: 0;
+  /* padding-top: 3rem; */
+  left: 3vw;
+  box-sizing: border-box;
+  width: 94vw;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+  display: none;
+}
+
+#reservation {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding-top: 8rem;
+  padding-right: 5rem;
+}
+@media only screen and (max-width: 1023px) {
+  #reservation {
+    padding-top: 6rem;
+    /* paddinig-right:1rem; */
+  }
+}
+#reservation .reservation_area {
+  position: relative;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  min-height: 150%;
+  background-color: #acc;
+}
+#reservation .close_btn {
+  position: absolute;
+  top: -1.875rem;
+  left: 50%;
+  margin-left: -1.875rem;
+  width: 3.75rem;
+  height: 3.75rem;
+}
+#reservation .close_btn > button {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #D4C098;
+  box-shadow: 0.2rem 0.2rem 0.2rem #646464;
+}
+#reservation .close_btn > button > .icon_close {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#reservation .close_btn > button > .icon_close:before, #reservation .close_btn > button > .icon_close::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  margin-top: -1px;
+  width: 70%;
+  height: 4px;
+  background-color: #171717;
+  /* border:2px solid $black; */
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+#reservation .close_btn > button > .icon_close:after, #reservation .close_btn > button > .icon_close::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  margin-top: -1px;
+  width: 70%;
+  height: 4px;
+  background-color: #171717;
+  /* border:2px solid $black; */
+  border-radius: 2px;
+  transform: rotate(-45deg);
+}
+@media only screen and (max-width: 1023px) {
+  #reservation .close_btn {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    margin-left: -1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  #reservation .close_btn > button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #D4C098;
+    box-shadow: 0.2rem 0.2rem 0.2rem #646464;
+  }
+  #reservation .close_btn > button > .icon_close {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  #reservation .close_btn > button > .icon_close:before, #reservation .close_btn > button > .icon_close::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    margin-top: -1px;
+    width: 70%;
+    height: 4px;
+    background-color: #171717;
+    /* border:2px solid $black; */
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+  #reservation .close_btn > button > .icon_close:after, #reservation .close_btn > button > .icon_close::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    margin-top: -1px;
+    width: 70%;
+    height: 4px;
+    background-color: #171717;
+    /* border:2px solid $black; */
+    border-radius: 2px;
+    transform: rotate(-45deg);
+  }
+}
