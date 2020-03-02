@@ -223,13 +223,30 @@ body {
   }
 }
 .head_wrap {
+  position: relative;
   width: 100%;
   height: auto;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: #171717;
+  background-color: rgba(23, 23, 23, 0.85);
+  box-shadow: 0 0.2rem 0.1rem 0.05rem #171717;
+}
+.head_wrap:after, .head_wrap::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url("../../img/header/header_bg.png");
+  opacity: 0.75;
 }
 
 #headBox {
@@ -245,7 +262,7 @@ body {
 h1 {
   float: left;
   width: 150px;
-  height: 60px;
+  height: 70px;
 }
 h1 > a {
   background-image: url("../../img/heroes9_logo.svg");
@@ -257,6 +274,7 @@ h1 > a:focus, h1 > a:hover {
   transform: scale(1.2);
   background-image: url("../../img/heroes_logo.png");
   background-size: contain;
+  filter: drop-shadow(0 0 0.7rem #ffffff);
 }
 
 #gnb {
@@ -541,7 +559,7 @@ h1 > a:focus, h1 > a:hover {
   height: 100%;
   border-radius: 50%;
   background-color: #D4C098;
-  box-shadow: 0.2rem 0.2rem 0.2rem #646464;
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(23, 23, 23, 0.8);
 }
 #reservation .close_btn > button > .icon_close {
   display: block;
@@ -577,54 +595,230 @@ h1 > a:focus, h1 > a:hover {
   border-radius: 2px;
   transform: rotate(-45deg);
 }
+
+#intro {
+  padding: 10rem 2rem;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url("../../img/intro/intro_bg_01_p.jpg");
+}
 @media only screen and (max-width: 1023px) {
-  #reservation .close_btn {
-    position: absolute;
-    top: -1.5rem;
-    left: 50%;
-    margin-left: -1.5rem;
-    width: 3rem;
-    height: 3rem;
+  #intro {
+    padding-top: 8rem;
+    background-image: url("../../img/intro/intro_bg_01_m.jpg");
   }
-  #reservation .close_btn > button {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: #D4C098;
-    box-shadow: 0.2rem 0.2rem 0.2rem #646464;
+}
+
+.title {
+  margin: auto;
+  margin-bottom: 4vw;
+  width: 60%;
+  height: auto;
+}
+.title > h2 {
+  margin: auto;
+  width: 35vw;
+  height: 16.5vw;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-image: url("../../img/heroes9_logo.svg");
+  filter: drop-shadow(0 0 0.7rem rgba(255, 255, 255, 0.8));
+}
+@media only screen and (max-width: 1023px) {
+  .title > h2 {
+    width: 50vw;
+    height: 16.5vw;
   }
-  #reservation .close_btn > button > .icon_close {
-    display: block;
+}
+.title p {
+  margin-top: 1vw;
+  padding-bottom: 1rem;
+  font-size: 4vw;
+  font-weight: bold;
+  text-align: center;
+  color: #D4C098;
+  text-shadow: 0.1rem 0.1rem 0.1rem rgba(23, 23, 23, 0.9);
+  border-bottom: 2px solid #D4C098;
+}
+@media only screen and (max-width: 1023px) {
+  .title p {
+    margin-top: 3vw;
+    font-size: 5vw;
+  }
+}
+
+.media_area {
+  margin: auto;
+  width: 10vw;
+  height: 10vw;
+}
+@media only screen and (max-width: 1023px) {
+  .media_area {
+    width: 13vw;
+    height: 13vw;
+  }
+}
+.media_area .play_btn {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem rgba(23, 23, 23, 0.7));
+}
+.media_area .play_btn button {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-image: url("../../img/intro/media_play.svg");
+  background-color: transparent;
+}
+.media_area .media {
+  position: fixed;
+  z-index: 1100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(23, 23, 23, 0.9);
+  display: none;
+}
+.media_area .media .close_btn {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  margin-left: -1.875rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  z-index: 1500;
+}
+.media_area .media .close_btn > button {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #D4C098;
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(23, 23, 23, 0.8);
+}
+.media_area .media .close_btn > button > .icon_close {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.media_area .media .close_btn > button > .icon_close:before, .media_area .media .close_btn > button > .icon_close::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  margin-top: -1px;
+  width: 70%;
+  height: 4px;
+  background-color: #171717;
+  /* border:2px solid $black; */
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+.media_area .media .close_btn > button > .icon_close:after, .media_area .media .close_btn > button > .icon_close::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  margin-top: -1px;
+  width: 70%;
+  height: 4px;
+  background-color: #171717;
+  /* border:2px solid $black; */
+  border-radius: 2px;
+  transform: rotate(-45deg);
+}
+@media only screen and (max-width: 1023px) {
+  .media_area .media .close_btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 0.5rem;
+  }
+}
+.media_area .media #introVideo {
+  position: absolute;
+  top: 3em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 60%;
+  height: auto;
+}
+@media only screen and (max-width: 1023px) {
+  .media_area .media #introVideo {
+    width: 95%;
+  }
+}
+
+.location_btn {
+  position: relative;
+  margin: auto;
+  margin-top: 14vw;
+  width: 50%;
+  height: 6rem;
+  text-align: center;
+  line-height: 6rem;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+.location_btn > ul {
+  height: 100%;
+}
+.location_btn > ul li {
+  width: 45%;
+  height: 100%;
+}
+.location_btn > ul li:last-child {
+  float: right;
+}
+.location_btn > ul a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-image: url("../../img/intro/intro_btn_01.svg");
+}
+@media only screen and (max-width: 1023px) {
+  .location_btn {
     width: 100%;
-    height: 100%;
+  }
+}
+@media only screen and (max-width: 639px) {
+  .location_btn {
+    height: auto;
+  }
+  .location_btn ul {
     position: relative;
+    left: 50%;
+    height: auto;
+    transform: translateX(-50%);
+    width: 96vw;
   }
-  #reservation .close_btn > button > .icon_close:before, #reservation .close_btn > button > .icon_close::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 15%;
-    margin-top: -1px;
-    width: 70%;
-    height: 4px;
-    background-color: #171717;
-    /* border:2px solid $black; */
-    border-radius: 2px;
-    transform: rotate(45deg);
+  .location_btn ul li {
+    float: none;
+    width: 100%;
+    height: 16vw;
+    font-size: 8vw;
+    margin-bottom: 3vw;
+    line-height: 16vw;
   }
-  #reservation .close_btn > button > .icon_close:after, #reservation .close_btn > button > .icon_close::after {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 15%;
-    margin-top: -1px;
-    width: 70%;
-    height: 4px;
-    background-color: #171717;
-    /* border:2px solid $black; */
-    border-radius: 2px;
-    transform: rotate(-45deg);
+  .location_btn ul li:last-child {
+    margin-bottom: 0;
+  }
+  .location_btn ul a {
+    background-image: url("../../img/intro/intro_btn_m.svg");
   }
 }

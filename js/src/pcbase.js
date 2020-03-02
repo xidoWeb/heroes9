@@ -25,7 +25,29 @@ $('.impack_check').on('click', function () {
 //    var res = $('.reservation_wrap');
 //    var resCloseBtn = res.find('.close_btn').children('button');
 
-    resCloseBtn.on('click', function (e) {
-      e.preventDefault();
-      res.slideUp();
-    });
+resCloseBtn.on('click', function (e) {
+  e.preventDefault();
+  res.slideUp();
+});
+
+
+ // intro
+ var mediaArea = $('.media_area');
+ var media = mediaArea.find('.media');
+ var introVideo = $('#introVideo');
+ var intro = $('#intro');
+ var introPlay = intro.find('.play_btn');
+
+ introPlay.on('click', function (e) {
+   e.preventDefault();
+   media.fadeIn();
+   media.currentTime = 0;
+   introVideo.get(0).play();
+ });
+
+ intro.find('.close_btn').on('click', function (e) {
+   e.preventDefault();
+   introVideo.get(0).pause();
+   media.currentTime = 0;
+   media.fadeOut();
+ });

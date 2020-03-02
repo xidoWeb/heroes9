@@ -1,29 +1,38 @@
 <section id="intro">
 
   <div class="title">
-    <h2>heroes nine awakers</h2>
+    <h2><span class="hidden">heroes nine awakers</span></h2>
     <p>초격차 전략배틀 RPG</p>
   </div>
 
   <div class="media_area">
     <div class="play_btn">
       <button type="button">
-        <i></i><span class="hieen">영상재생</span>
+        <span class="hidden">영상재생</span>
       </button>
     </div>
 
     <div class="media">
-      <video>
-        <source src="../media/heroes9_int_01.mp4" type="video/mp4">
+        <div class="close_btn hidden_wrap">
+          <button type="button"><span>영상 닫기</span><i class="icon_close"></i></button>
+        </div>
+      <video id="introVideo" controls>
+        <source src="./media/heroes9_int_01.mp4" type="video/mp4">
       </video>
     </div>
   </div>
 
   <div class="location_btn">
     <h3 class="hidden">사전등록 및 공식카페 바로가기</h3>
-    <ul>
-      <li><a href="#reservation" class="impack_check">사전 등록 바로가기</a></li>
-      <li><a href="https://cafe.naver.com/heroes9" target="_blank">공식카페 바로가기</a></li>
+    <ul class="float_array hidden_wrap">
+      <li>
+        <a href="#reservation" class="impack_check">
+          사전 등록<span>바로가기</span>
+        </a></li>
+      <li>
+        <a href="https://cafe.naver.com/heroes9" target="_blank">
+          공식카페<span>바로가기</span>
+        </a></li>
     </ul>
   </div>
 
