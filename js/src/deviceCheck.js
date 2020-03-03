@@ -1,23 +1,28 @@
 (function($){
-  // $('body').append(`<script class="deviceScript"></script>`);
-  // $('body').append(`<script class="deviceScript" src="./js/src/import.js"></script>`);
+
   var winW = $(window).outerWidth();
-  // console.log(winW);
+
   var afterWinW;
 
+  // var deviceCheck = {
+  //   mobile : { min : 240,  max : 639   },
+  //   tablet : { min : 640,  max : 1023  },
+  //   pcbase : { min : 1024, max : 1365  },
+  //   laptop : { min : 1366, max : 1599  },
+  //   full   : { min : 1600            }
+  // };
+
   var deviceCheck = {
-    mobile : { min : 240,  max : 639   },
-    tablet : { min : 640,  max : 1023  },
-    pcbase : { min : 1024, max : 1365  },
-    laptop : { min : 1366, max : 1599  },
+    mobile : { min : 240,  max : 1023  },
+    pcbase : { min : 1024, max : 1599  },
     full   : { min : 1600            }
   };
 
   // var deviceName = ['mobile', 'tablet', 'pcbase', 'laptop', 'full'];
   var deviceName = ['mobile', 'mobile', 'pcbase', 'pcbase', 'pcbase'];
   var myDevice;
-  var deviceNum=0;
-  var testColor = ['#bbb', '#fac', '#acf', '#afc', '#fc7'];
+  // var deviceNum=0;
+  // var testColor = ['#bbb', '#fac', '#acf', '#afc', '#fc7'];
   
 
   var device = function(size){
@@ -29,7 +34,7 @@
     // }
 
    // 각 디바이스 환경설정 
-    if(size >= deviceCheck.mobile.min && size < deviceCheck.tablet.min) {
+    /* if(size >= deviceCheck.mobile.min && size < deviceCheck.tablet.min) {
       myDevice = deviceName[0];
       deviceNum = 0;
     } 
@@ -47,12 +52,22 @@
     }else{
       myDevice = deviceName[4];
       deviceNum = 4;
+    } */
+    // $('body').stop().animate({'backgroundColor':testColor[deviceNum]},300);
+    if (size >= deviceCheck.mobile.min && size < deviceCheck.pcbase.min) {
+      myDevice = deviceName[0];
+      deviceNum = 0;
+    } else if (size >= deviceCheck.pcbase.min && size < deviceCheck.full.min) {
+      myDevice = deviceName[1];
+      deviceNum = 1;
+    } else {
+      myDevice = deviceName[4];
+      deviceNum = 4;
     }
-    $('body').stop().animate({'backgroundColor':testColor[deviceNum]},300);
-    
+
     $(document).ready(function(){
-      setTimeout(() => {
-        $('body').append(`<script class="deviceScript" src="./js/src/${myDevice}.js"></script>`);
+      setTimeout(function() {
+        $('body').append('<script class="deviceScript" src="./js/src/' + myDevice + '.js"></script>');
       }, 100);
     });
     

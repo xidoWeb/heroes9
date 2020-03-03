@@ -21,8 +21,8 @@
   wrap.append('<div class="event_01_wrap wrapper"></div>');
   $('.event_01_wrap').load('./page/event_01.html');
 
-  wrap.append('<div class="event_02_wrap wrapper"></div>');
-  $('.event_02_wrap').load('./page/event_02.html');
+/*   wrap.append('<div class="event_02_wrap wrapper"></div>');
+  $('.event_02_wrap').load('./page/event_02.html'); */
 
 // game story
   wrap.append('<div class="gameStory_wrap wrapper"></div>');

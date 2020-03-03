@@ -8,78 +8,95 @@
   <div class="view">
     <div class="content">
       <div class="insignia">
-        <h3>사전등록 모집</h3>
+        <h3>사전 등록 모집</h3>
       </div>
-      <p>사전등록 한정, 특별한 혜택을 누리세요! <br />
-        오직, 사전 등록자만 10만원 상당의 아이템을 100% 증정! <br />
+      <p><em>사전등록 한정</em>,<br class="mobile" /> 특별한 혜택을 누리세요! <br />
+        오직, 사전 등록자만 <br class="mobile" />
+        <em>10만원 상당</em>의 아이템을 100% 증정! <br />
         <span>( 기간 : 정식 오픈 전까지 )</span>
       </p>
     </div>
 
   <!-- form -->
-  <form action="#" method="post">
-    <fieldset>
-      <legend class="hidden">heroes nine 사전등록 내용 입력</legend>
+  <form action="#" method="post" id="registration">
+    
+ <!-- 스마트폰 번호 입력 -->
+      <fieldset class="input_number_area">
+        <legend class="hidden">개인정보입력 및 정보수집동의</legend>   
       
+        <h4 class="hidden">스마트폰 사용자 기기 및 번호 입력</h4>
+        <p>사용하고 계신 스마트폰 <abbr title="operating system">OS</abbr>를 선택해 주세요.</p>
+        <ul>
+          <li>
+            <input type="radio" name="os" id="andSel" value="android OS" />
+            <label for="andSel"><i class="fab fa-android"></i><span class="hidden">안드로이드 os</span></label>
+          </li>
+          <li>
+            <input type="radio" name="os" id="iosSel" value="IOS" />
+            <label for="iosSel"><i class="fab fa-apple"></i><span class="hidden">애플 ios</span></label>
+          </li>
+        </ul>
+
+        <div class="phone_num">
+          <label for="user_phone_number" class="hidden">사용자 번호를 입력하세요</label>
+          <input type="tel" name="user_phone_number" id="user_phone_number" value="" placeholder="'-' 없이 휴대폰 번호 숫자" />
+        </div>
+
+        <div class="user_info clearfix">
+          <input type="checkbox" name="user_info_check" id="user_info_check" value="사용자 개인정보 이용 동의" />
+          <label for="user_info_check"><i class="icon_check"></i>개인정보 수집 및 이용 동의</label>
+          <button type="button" class="consent_btn"><span class="hidden">개인정보 수집 및 이용 동의 확인사항</span>자세히 보기</button>
+        </div>
+
+        <p class="hidden">사전등록 신청버튼</p>
+        <div class="submit">
+          <button type="submit">사전등록 신청하기</button>
+        </div>
+    </fieldset>
+
+<!-- // store 선택 -->
+    <fieldset class="store_area">
+      <legend class="hidden">store 선택</legend>
+
       <h4 class="hidden">디바이스 os</h4>
-      <ul class="store_choice">
+      <p>마켓 사전등록 시 추가 보상 지급</p> 
+      <ul class="store_choice hidden_wrap clearfix">
         <li>
           <input type="radio" name="store_choice" id="google" value="구글플레이" />
-          <label for="android">구글 플레이</label>
+          <label for="google"><span>구글 플레이</span></label>
         </li>
         <li>
           <input type="radio" name="store_choice" id="apple" value="애플스토어" />
-          <label for="ios">애플 스토어</label>
+          <label for="apple"><span>애플 스토어</span></label>
         </li>
         </li>
         <li>
           <input type="radio" name="store_choice" id="one" value="원스토어" />
-          <label for="one">원스토어</label>
+          <label for="one"><span>원스토어</span></label>
         </li>
       </ul>
-      
-      <div class="phone_num">
-        <label for="user_phone_number" class="hidden">사용자 번호를 입력하세요</label>
-        <input type="number" name="user_phone_number" id="user_phone_number" value="" />
-      </div>
-
-      <div class="user_info">
-        <button type="button" class="hidden_wrap consent_btn"><span>개인정보 수집 및 이용 동의 확인사항</span>자세히 보기</button>
-        <input type="checkbox" name="user_info_check" id="user_info_check" value="사용자 개인정보 이용 동의" />
-        <label for="user_info_check">개인정보 수집 및 이용 동의</label>
-      </div>
-
-      <div class="submit">
-        <button type="submit">공식카페 가입하러 가기</button>
-      </div>
     </fieldset>
   </form>
   
   <!-- 혜택 확인하기 -->
    <div class="content">
-     <h3>혜택 확인하기</h3>
-     <ul class="benefits">
+     <h3 class="hidden ">혜택 확인하기</h3>
+     <ul class="benefits float_array">
        <li>
-         <a href="">
            <div class="img ruby300"></div>
-           <span>루비<br />300개</span>
-         </a>
+           <span>루비<br /><em>300개</em></span>
        </li>
        <li>
-         <a href="">
            <div class="img eter100"></div>
-           <span>에테르<br />100개</span>
-         </a>
+           <span>에테르<br /><em>100개</em></span>
        </li>
        <li>
-         <a href="">
            <div class="img deck1"></div>
-           <span>엘리트부대원 뽑기권<br />1개</span>
-         </a>
+           <span>엘리트부대원<br />뽑기권 <em>1개</em></span>
        </li>
      </ul>
      </div>
-     <div class="content">
+     <div class="content check">
       <h3>주의사항</h3>
       <ol class="checklist">
           <li>모든 사전등록코드는 계정당 1회 사용 가능합니다.</li>
@@ -87,7 +104,8 @@
           <li>SMS 수신이 불가한 경우 아이템 및 경품을 받을 수 없습니다.</li>
           <li>휴대폰 번호 도용 시, 법적 책임은 본인에게 있습니다.</li>
           <li>허위로 신청한 경우 상품 지급을 거부할 수 있습니다.</li>
-          <li>본 이벤트를 통해 수집된 개인정보는 경품지급 등 <span class="guard">넬비스게임즈</span>에서 진행하는 모든 게임의 프로모션 용도로 6개월 간 사용됩니다.</li>
+          <li>본 이벤트를 통해 수집된 개인정보는 경품지급 등 <span class="guard">넬비스게임즈</span>에서 <br class="mobile" />진행하는 모든 게임의 프로모션 용도로
+            6개월 간 사용됩니다.</li>
       </ol>
    </div>
   </div><!-- .view -->

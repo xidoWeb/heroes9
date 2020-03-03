@@ -1,15 +1,15 @@
 (function($){
   var gnb = $('#gnb');
   var menuBtn = gnb.find('.handheld');
+  var gnbList = gnb.find('.menu').children('li');
+  var gnbLink = gnbList.children('a');
 
   var res = $('.reservation_wrap');
   var resCloseBtn = res.find('.close_btn').children('button');
   // console.log('mobile');
   var consent = $('#consent');
 
-  // header
-
-
+  // header 메뉴버튼으로 메뉴/X 토글
   menuBtn.on('click', function(e){
     e.preventDefault();
     var _this = $(this);
@@ -20,22 +20,29 @@
       _this.addClass('action');
     }
   });
+  // ------------------------------------
   
-  $('.impack_check').on('click', function () {
-    res.slideDown();
+  
+  gnbList.on('click', function (e) {
+    e.preventDefault();
+    if ($(this)[0] == $('.impack_check')[0]){
+      res.slideDown();
+    }
     menuBtn.removeClass('action');
   });
-  
-  // reservation
-  var res = $('.reservation_wrap');
-  var resCloseBtn = res.find('.close_btn').children('button');
+  var introResBtn = $('.all_mv_btn');
+  introResBtn.on('click', function(e){
+    e.preventDefault();
+    res.slideDown();
+  });
 
+  // reservation
   resCloseBtn.on('click', function(e){
     e.preventDefault();
     res.slideUp();
   });
 
-  // intro
+  // intro동영상
 var mediaArea = $('.media_area');
 var media = mediaArea.find('.media');
 var introVideo = $('#introVideo');
@@ -56,6 +63,7 @@ intro.find('.close_btn').on('click', function (e) {
   media.fadeOut();
 });
 
+//닫기버튼
 consent.find('.close_btn').on('click', function (e) {
     e.preventDefault();
     // consent.slideUp();
