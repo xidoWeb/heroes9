@@ -1,9 +1,6 @@
 <section id="reservation">
   <div class="reservation_area">
   <h2 class="hidden">사전등록 페이지</h2>
-  <div class="close_btn hidden_wrap">
-    <button type="button"><span>사전등록 닫기</span><i class="icon_close"></i></button>
-  </div>
 
   <div class="view">
     <div class="content">
@@ -17,6 +14,25 @@
       </p>
     </div>
 
+    <!-- 혜택 확인하기 -->
+    <div class="content">
+      <h3 class="hidden ">혜택 확인하기</h3>
+      <ul class="benefits float_array">
+        <li>
+          <div class="img ruby300"></div>
+          <span>루비<br /><em>300개</em></span>
+        </li>
+        <li>
+          <div class="img eter100"></div>
+          <span>에테르<br /><em>100개</em></span>
+        </li>
+        <li>
+          <div class="img deck1"></div>
+          <span>엘리트부대원<br />뽑기권 <em>1개</em></span>
+        </li>
+      </ul>
+    </div>
+
   <!-- form -->
   <form action="#" method="post" id="registration">
     
@@ -25,14 +41,14 @@
         <legend class="hidden">개인정보입력 및 정보수집동의</legend>   
       
         <h4 class="hidden">스마트폰 사용자 기기 및 번호 입력</h4>
-        <p>사용하고 계신 스마트폰 <abbr title="operating system">OS</abbr>를 선택해 주세요.</p>
-        <ul>
+        <p class="narr">사용하고 계신 스마트폰 <abbr title="operating system">OS</abbr>를 선택해 주세요.</p>
+        <ul class="float_array device_sel">
           <li>
-            <input type="radio" name="os" id="andSel" value="android OS" />
+            <input type="radio" class="hidden" name="os" id="andSel" value="android OS" />
             <label for="andSel"><i class="fab fa-android"></i><span class="hidden">안드로이드 os</span></label>
           </li>
           <li>
-            <input type="radio" name="os" id="iosSel" value="IOS" />
+            <input type="radio" class="hidden" name="os" id="iosSel" value="IOS" />
             <label for="iosSel"><i class="fab fa-apple"></i><span class="hidden">애플 ios</span></label>
           </li>
         </ul>
@@ -44,7 +60,7 @@
 
         <div class="user_info clearfix">
           <input type="checkbox" name="user_info_check" id="user_info_check" value="사용자 개인정보 이용 동의" />
-          <label for="user_info_check"><i class="icon_check"></i>개인정보 수집 및 이용 동의</label>
+          <label for="user_info_check"><i class="fas fa-check-circle"></i>개인정보 수집 및 이용 동의</label>
           <button type="button" class="consent_btn"><span class="hidden">개인정보 수집 및 이용 동의 확인사항</span>자세히 보기</button>
         </div>
 
@@ -59,43 +75,27 @@
       <legend class="hidden">store 선택</legend>
 
       <h4 class="hidden">디바이스 os</h4>
-      <p>마켓 사전등록 시 추가 보상 지급</p> 
+      <p>각 마켓별 사전등록도 진행되고 있습니다!</p>
       <ul class="store_choice hidden_wrap clearfix">
         <li>
-          <input type="radio" name="store_choice" id="google" value="구글플레이" />
+          <input type="radio" name="store_choice" id="google" value="구글플레이 사전예약" />
           <label for="google"><span>구글 플레이</span></label>
         </li>
         <li>
-          <input type="radio" name="store_choice" id="apple" value="애플스토어" />
-          <label for="apple"><span>애플 스토어</span></label>
+          <input type="radio" name="store_choice" id="naver" value="네이버사전예약" />
+          <label for="naver"><span>애플 스토어</span></label>
         </li>
         </li>
         <li>
-          <input type="radio" name="store_choice" id="one" value="원스토어" />
+          <input type="radio" name="store_choice" id="one" value="원스토어 사전예약" />
           <label for="one"><span>원스토어</span></label>
         </li>
       </ul>
     </fieldset>
   </form>
   
-  <!-- 혜택 확인하기 -->
-   <div class="content">
-     <h3 class="hidden ">혜택 확인하기</h3>
-     <ul class="benefits float_array">
-       <li>
-           <div class="img ruby300"></div>
-           <span>루비<br /><em>300개</em></span>
-       </li>
-       <li>
-           <div class="img eter100"></div>
-           <span>에테르<br /><em>100개</em></span>
-       </li>
-       <li>
-           <div class="img deck1"></div>
-           <span>엘리트부대원<br />뽑기권 <em>1개</em></span>
-       </li>
-     </ul>
-     </div>
+
+     <!-- 주의사항 -->
      <div class="content check">
       <h3>주의사항</h3>
       <ol class="checklist">
@@ -110,4 +110,9 @@
    </div>
   </div><!-- .view -->
   </div>
+
+    <div class="close_btn hidden_wrap">
+      <button type="button"><span>사전등록 닫기</span><i class="icon_close"></i></button>
+    </div>
+
 </section>

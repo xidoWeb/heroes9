@@ -1,0 +1,64 @@
+
+#gameStory {position: relative; height:auto; //max-height:100vh;
+  @include bg($z:cover) { background-image: url('../../img/story/story_01.jpg'); }
+  @include more(before){width: 100%; height: 100%; position: absolute; top: 0; left: 0; 
+    background-color: $opBlue;
+    }
+}
+
+// 상단제목
+@include flag($h:3.5rem);
+
+// 케릭터
+  .game_content{position:relative; width: 100%; height:auto; min-height:40vh; //background-color: rgba($white,50%);
+    
+    //좌우버튼
+    >.slide_btn{position: absolute; z-index:700; top:50%; left:5%; width: 90%; height:0; background-color: $red;
+      button{width: 8vw; min-width:5rem; height:4vw; min-height:4rem; font-size: 3.5rem;
+        background-color:transparent; outline:0; transition: all 200ms ease; 
+        filter:drop-shadow(0 0 0.2rem $opBlue);
+        &:focus, &:hover {color: $primary; text-shadow:0 0 0.2rem $blue; transform:scale(1.1);}
+        @include bg;
+        &.next_btn{background-image: url('../../img/common/next.svg');}
+        &.prev_btn{background-image: url('../../img/common/prev.svg');}
+      }
+        @include device($tablet){bottom:2rem;}
+      .next_btn{float:right; margin-right: -1rem;}
+      .prev_btn{float:left; margin-left: -1rem;}
+    }
+    //인디케이터
+    >.indicator{position: absolute; z-index:300; left:0; right:0; margin:auto;  width:30vw; height:1rem; bottom:2rem;
+      @include device($tablet){height: 0.7rem;}
+      ul{margin:auto; width:60%; min-width:120px; height: 100%;}
+      button{width: 100%; height: 100%; background-color: rgba($white, 0.7);
+            &:focus, &:hover {background-color: $primary; box-shadow:0 0 0.2rem $blue;}}
+    }
+    li.action > button{background-color: $yellow; }
+
+   .story>li{margin-right:5%; width:28%; height:100%;}
+   .character>li {margin-right:5%; width:45%; height: 100%;}
+   
+  }
+
+// 모달 내용
+  $count:4;
+  .story_area{margin:auto; width: 80%; height: 70vh; overflow: hidden;
+    @include device($tablet){width: 100%;}
+    ul{position:relative; width:$count * 100%; height: 100%; margin-left: -100%;
+      li{width:100% / $count;  @include bg($z:cover);
+        &.part_01{ background-image: url('../../img/story/awake.jpg');}
+        &.part_02{ background-image: url('../../img/story/story_team_01.jpg');}
+        &.part_03{ background-image: url('../../img/story/story_guild_01.jpg');}
+      }
+      dl{margin:auto; width: 90%; height:auto; padding-top: 45vh;
+        >dt{font-weight: bold; font-size: 2rem; color:$white; margin-bottom: 1rem;
+          @include device($tablet){font-size:1.3rem; letter-spacing:-0.1rem; word-spacing:-0.05rem;}
+        }
+        >dd{font-weight:400; font-size: 1.2rem; color:lighten($black, 70%);
+            @include device($mobile){font-size:0.875rem;}
+        }
+      }
+ 
+    }
+  }
+  

@@ -1,0 +1,53 @@
+.consent_wrap { display: none; 
+  position:fixed; top: 0; left:0; z-index:1500; width: 102%; height:100%; background-color:rgba($blue,0.95);
+  box-sizing: border-box; padding:8vw; overflow: scroll;
+}
+ 
+#consent{ width: 100%; max-width:48rem; height:auto; min-height: 100%; 
+
+
+// background-color: rgba($white, 0.95);
+padding-top:3.5rem; color:$white; line-height:1.2;
+  .close_btn {  @include closeBtn{top:1rem;}; }
+ h2{text-align: center; font-size:2rem; margin-bottom: 2rem; }
+ 
+ .management{position:relative; margin-top:6rem; width: 100%; height:auto;
+
+    &:before,&::before{content:""; display:block; position:absolute; top:-4rem; left:50%; transform: translate(-50%); width:2.5rem; height:2.5rem; 
+    @include bg{background-image: url('../../img/header/SVG/res_point.svg');}
+    }
+
+  dl{width: 100%; height:auto; border-bottom:1px solid $white;
+    padding:0.5rem 0.2rem; letter-spacing:-0.015rem; font-size:0.875rem;}
+  dt{float:left; width:40%; font-weight: bold;}
+  dd{float:right; width:57%; font-weight: narmal;}
+  li{list-style-type:decimal;
+    word-break:keep-all}
+ }
+
+ .policy{position:relative; margin-top:2rem; padding:1rem; box-sizing: border-box;
+   width: 100%; height:auto; color:$black;
+  h3{width: 100%; text-align: center; color:$white; font-weight: bold; font-size: 1.3rem; margin-top: 1rem; margin-bottom: 2rem;}
+
+  @mixin pol(){content:" "; display:block; position:relative; left:50%; transform: translate(-50%); width:90vw; height:2.2rem;  @include bg{background-image: url('../../img/consent/flagpole.svg');}
+    }
+
+  &:before, &::before{ @include pol; top:0; transform: translate(-50%) rotate(180deg);}
+  &:after, &::after{ @include pol; bottom:-1.5rem;}
+  }
+  .narr{position: relative; left:50%; transform:translate(-50%); 
+        padding:2rem 1rem; width:82vw; height:25rem; background-color: $white; 
+        overflow: scroll; border:10px solid $primary; }
+
+}
+
+.service{font-size: 1rem; color:lighten($black, 20%); line-height:1.2; margin-bottom:0.7rem; font-weight:300; letter-spacing:-0.05rem;
+h4{margin-bottom: 0.5rem; font-size: 1.3rem;}
+ dl, dt, dd, p, em, ul, li, ol {color:inherit; font-size:inherit; font-style:normal; margin:inherit;}
+ dl{margin-bottom:0.7rem; margin-top:0.5rem;}
+ dt{font-weight:600; text-decoration:underline; color:$blue; margin-bottom: 0.3rem;}
+ dd dt{color:lighten($blue, 20%); font-size: 0.9rem; text-decoration: none;}
+ dd{margin-bottom:0.3rem;}
+ ul{margin:0.5rem 0; background-color: rgba($black, 0.1); padding:0.3rem; box-sizing: border-box; word-break:keep-all; color:$black;}
+ p{margin-bottom: 0; color:$blue;}
+}

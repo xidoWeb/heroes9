@@ -1,0 +1,92 @@
+
+#gameCharacter{position: relative; height:auto;
+  @include flag($fc:$opBlue, $h:3.5rem, $fs:0.2rem 0.2rem 0.4rem $white, $bd:3px solid $opBlue);
+}
+
+  .background_box{position: absolute; top: 0;left: 0; width: 100%; height: 100%; z-index: -1;
+    .theme{position: absolute; top: 0; left: 0; width: 100%; height: 100%; @include bg($z:cover); }
+    .light_team{ background-image: url('../../img/character/lightTheme.png');}
+    .darken_team{ background-image: url('../../img/character/darkTheme.png'); display: none;}
+  }
+
+  $count:3; $size:200px;
+  .game_area{position:relative; margin:auto; width: 80%; height: 70vh; overflow: hidden;
+    @include device($tablet){width: 100%;}
+    
+    >ul{position:relative; width:$count * 100%; height: 100%; margin-left: -100%;
+        padding-top:3rem; box-sizing: border-box;
+        @include device($mobile){padding-top: 0;}
+      >li{position:relative; width:100% / $count;  @include bg($z:cover); 
+        .team_type{font-size: 1.8rem; color:$white; position: absolute; bottom:3.5rem; left:0; right:0; margin:auto; 
+          text-shadow:0 0 0.3rem $opBlue;
+          @include device(340px){font-size: 1.5rem;} }
+        .character_icon{width: 100%; height: 100%;
+          li{position:relative; display:inline-block; float:none; margin:3vw;margin-top:0; margin-bottom:1.2vw; width:$size; height:$size + 35px; transition:all 0.2s ease; // background-color: $darkBlue;
+            @include device($tablet){width: $size/3*2; height: $size - 10px;}
+            @include device($mobile){width: $size/3*2; height: $size/5*4; margin-bottom: 1rem;}
+            @include device(340px){margin-bottom:0.5rem; width:$size/2; height: $size/2;}
+
+            >button{width:$size; height:$size; border-radius:50%; font-size: 1.2rem;
+                background-color:rgba($primary, 0); transition:all 0.5s ease;
+                // 임시캐릭터 이미지 첨부
+              @include bg($z:cover){background-image: url('../../img/character/Loa.png');}
+              @include device($tablet){width: $size/3*2; height: $size/3*2;}
+              @include device(400px){width: $size/4*2; height: $size/4*2; font-size: 1rem;}
+
+             >span{display: block; position: absolute; width: 100%; left:0; bottom:0; text-align: center;
+               /* background-color: $opBlue; */ padding:0.2rem 0; color:$darkBlue; font-weight: bold;
+              @include device($tablet){padding:0.1rem 0;}
+              } // span 
+            }
+            &:hover,&:focus, &.action {transform:scale(1.1); 
+              >button{ background-color:$darkBlue; }
+              }          
+          }
+        }
+        .darken_team li>button>span{color:$primary;}
+      }
+    } // ul
+  }
+.character_infomation{  display: none;
+  .close_btn{ @include closeBtn(2rem){z-index:500;}; }
+  position: fixed; z-index:1200; top: 0; left: 0; width: 100%; height: 100%; box-sizing: border-box; padding: 5rem; padding-top: 7rem;
+  @include device($tablet){padding:3rem 1.5rem;}
+  @include device($mobile){padding:6rem 1.5rem;}
+  @include more(before){position:absolute; z-index:-1; top:0; left:0; width:100%; height:100%; background-color:$opBlue}
+
+  .ch_info_area{position:relative;margin:auto; width: 80%; height: 100%; 
+    @include device($tablet){width:100%;}
+    .img{position:absolute; top:-25%; width: 85%; height: 150%; right:40%; 
+        transition:all 300ms ease 300ms;
+        // js에서 입력하도록 처리
+        @include bg($p:100% 0,$z:cover);
+      @include device($tablet){right:0; width:110%;}
+    }
+    .ch_info{position:absolute; top: 5%; left: 35%; 
+          width: 60%; height: 90%; padding-top: 10rem; padding-left: 5rem; paddinig-right:3rem;
+          text-align: left; box-sizing: border-box; color:$white;
+          @include bg($z:contain,$p:0){background-image: url('../../img/character/bgl2.png');}
+     @include device($mobile){width:100%; left:20%; padding: 5rem;
+        padding-left: 5.4rem; padding-right: 3.3rem; background-size: cover; }
+     .team_set{font-size:1.5rem; color:$white; font-weight: bold; box-sizing: border-box; margin-bottom:1rem;
+        @include device($mobile){font-size: 1.1rem; }
+      }
+      dd{margin-bottom: 0.5rem;}
+     .ck_name{
+        .ck_n{font-size: 1.5rem; font-weight: bold;}
+        .type{font-size: 1.2rem; color:$primary; }
+        .option{}
+      }
+      .narr_title{font-size: 1.3rem;
+        @include device($mobile) {font-size: 1rem;}
+        @include device(400px) {font-size: 0.875rem;}
+      }
+      .narr_par {font-size: 1.3rem;
+      @include device($mobile) {font-size: 1rem;}
+      @include device(400px) {font-size: 0.875rem;}
+    
+    }
+
+    }
+  } 
+}

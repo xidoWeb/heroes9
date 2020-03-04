@@ -36,7 +36,7 @@
     res.slideDown();
   });
 
-  // reservation
+  reservation
   resCloseBtn.on('click', function(e){
     e.preventDefault();
     res.slideUp();

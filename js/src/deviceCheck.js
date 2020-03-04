@@ -1,69 +1,23 @@
 (function($){
 
   var winW = $(window).outerWidth();
-
   var afterWinW;
-
-  // var deviceCheck = {
-  //   mobile : { min : 240,  max : 639   },
-  //   tablet : { min : 640,  max : 1023  },
-  //   pcbase : { min : 1024, max : 1365  },
-  //   laptop : { min : 1366, max : 1599  },
-  //   full   : { min : 1600            }
-  // };
-
   var deviceCheck = {
     mobile : { min : 240,  max : 1023  },
     pcbase : { min : 1024, max : 1599  },
     full   : { min : 1600            }
   };
 
-  // var deviceName = ['mobile', 'tablet', 'pcbase', 'laptop', 'full'];
-  var deviceName = ['mobile', 'mobile', 'pcbase', 'pcbase', 'pcbase'];
+  var deviceName = ['mobile', 'pcbase', 'full'];
   var myDevice;
-  // var deviceNum=0;
-  // var testColor = ['#bbb', '#fac', '#acf', '#afc', '#fc7'];
-  
-
   var device = function(size){
-    var winH = $(window).outerHeight();
-
-    // 모바일기기 가로형 제한설정
-    // if (size < deviceCheck.pcbase.min && size - winH > 0){ 
-    //   $('body').html('<h2>가로형 기기는 지원하지 않습니다. <br />  세로로 돌려주세요.</h2>')
-    // }
-
-   // 각 디바이스 환경설정 
-    /* if(size >= deviceCheck.mobile.min && size < deviceCheck.tablet.min) {
-      myDevice = deviceName[0];
-      deviceNum = 0;
-    } 
-    else if (size >= deviceCheck.tablet.min && size < deviceCheck.pcbase.min){
-      myDevice = deviceName[1];
-      deviceNum = 1;
-    }
-    else if (size >= deviceCheck.pcbase.min && size < deviceCheck.laptop.min){
-      myDevice = deviceName[2];
-      deviceNum = 2;
-    } 
-    else if (size >= deviceCheck.laptop.min && size < deviceCheck.full.min){
-      myDevice = deviceName[3];
-      deviceNum = 3;
-    }else{
-      myDevice = deviceName[4];
-      deviceNum = 4;
-    } */
-    // $('body').stop().animate({'backgroundColor':testColor[deviceNum]},300);
     if (size >= deviceCheck.mobile.min && size < deviceCheck.pcbase.min) {
-      myDevice = deviceName[0];
-      deviceNum = 0;
-    } else if (size >= deviceCheck.pcbase.min && size < deviceCheck.full.min) {
-      myDevice = deviceName[1];
-      deviceNum = 1;
-    } else {
-      myDevice = deviceName[4];
-      deviceNum = 4;
-    }
+      myDevice = deviceName[0];  deviceNum = 0;
+    } else{ // if (size >= deviceCheck.pcbase.min && size < deviceCheck.full.min) {
+      myDevice = deviceName[1];  deviceNum = 1;
+    } /* else {
+      myDevice = deviceName[2];  deviceNum = 2;
+    } */
 
     $(document).ready(function(){
       setTimeout(function() {

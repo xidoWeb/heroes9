@@ -1,0 +1,8 @@
+.footer_wrap{height:auto;}
+#footBox{padding-top:1rem; width: 100%; height:auto; min-height:3.75rem; background-color: rgba($black, 0.9);
+
+h2{position:relative; z-index:100; left:50%; transform:translate(-50%); width:6rem; height:3rem; 
+    @include bg{background-image: url('../../img/heroes9_logo.svg');}
+  }
+ p{text-align: center; color:rgba($white,0.7); font-size: 0.5rem; padding-bottom: 1.5rem;}
+}

@@ -1,0 +1,82 @@
+
+@mixin device($width){
+  @if $width == $full {
+    @media only screen and (min-width:$width){
+      @content;
+    }
+  }@else {
+    @media only screen and (max-width:$width) {
+      @content;
+    }
+  }
+}
+
+@mixin bg($r:no-repeat, $p:50% 50%, $z:contain){
+  background-repeat: $r;
+  background-position: $p;
+  background-size: $z;
+  @content;
+}
+ @mixin close(){
+        content:" "; display:block; position: absolute; top: 50%; right:15%; margin-top:-1px; 
+        width:70%; height: 4px; background-color: $black; /* border:2px solid $black; */
+        border-radius:2px;
+  }
+
+// $circle:3.75rem;
+// @mixin closeBtn($select:close_btn, $t:-$circle/2) {
+//    .#{$select}{
+//    @mixin btnSize(){
+//       position:absolute; left:50%; margin-left:-$circle/2; 
+//         width:$circle; height:$circle; 
+//         >button {
+//           width: 100%;
+//           height: 100%;
+//           border-radius: 50%;
+//           background-color: $primary;
+//           box-shadow:0.2rem 0.2rem 0.2rem lighten($black, 30%);
+//           // transform:rotate(45deg);
+//           >.icon_close {display:block; width: 100%; height: 100%; position: relative; 
+//             &:before, &::before{@include close(); transform:rotate(45deg); }
+//             &:after,  &::after{@include close(); transform:rotate(-45deg); }
+//           }
+//           }
+//    }
+//    @include btnSize();
+
+//     @include device($tablet) {
+//       $c ircle:3rem;
+//       @include btnSize();
+//     }
+//   }
+// }
+
+
+$circle:3rem;
+@mixin closeBtn($t:-$circle/2){
+    position:absolute; top:$t; left:50%; margin-left:-$circle/2; 
+    width:$circle; height:$circle; 
+    @content;
+
+  >button { width: 100%; height: 100%; border-radius: 50%; 
+    background-color: $primary; 
+    box-shadow:0.2rem 0.2rem 0.2rem rgba($black, 80%);
+    >.icon_close {display:block; width: 100%; height: 100%; position: relative; 
+      &:before, &::before{@include close(); transform:rotate(45deg); }
+      &:after,  &::after{@include close(); transform:rotate(-45deg); }
+    }}
+  }
+
+@mixin more($code:before){ &:#{$code},&::#{$code}{content:" "; display:block; @content; } }
+
+@mixin flag($w:35vw, $mw:300px, $h:2.5rem, $fc:$primary, $fs:0.2rem 0.2rem 0.7rem $opBlue, $bd:3px solid $primary) {
+  .insignia{position: relative; z-index: 100; // left:50%; transform:translate(-50%);
+    margin:auto; min-width:$mw; margin-bottom: 1rem;
+    width:$w; padding:0.5rem 0; border:$bd; border-left:0; border-right:0;
+    h2,h3{text-align: center; width: 100%; height: 100%; font-size:$h; color:$fc; text-shadow:$fs; word-break:keep-all} 
+    @include device($mobile){
+      h2,h3{ font-size: 2.7rem; letter-spacing:-0.1rem;} 
+    }
+
+    @content;
+  }   }

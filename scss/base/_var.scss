@@ -1,0 +1,56 @@
+// size
+$mobileMin : 320px;
+$mobile : 639px;
+$tablet : 1023px;
+$pcbase : 1365px;
+$laptop : 1599px;
+$full : 1600px;
+
+
+// color
+$white :#ffffff;
+$black : #171717;  
+$primary :#D4C098;
+$yellow:#E9C446;
+$base1:$black;
+$red:#9C0000;
+$red-gr:linear-gradient(120deg, #330009, #B30000);
+$blue:#1F357f;
+$darkBlue: darken($blue,20%);
+$opBlue: rgba(darken($blue, 20%), 0.85);
+$opBlack: rgba($black, 0.97);
+$green : #94C248;
+
+$font1:#171717;
+$font2:#333;
+$font3:#1F3D70;
+$full_bg:#000;
+
+
+//font
+$eng:#000;
+$kor:'Spoqa Han Sans', 'nyz-l';
+$title:'title';
+$point:#000;
+$h2_size:4rem;
+$h3_size:3rem;
+$h4_size:2rem;
+$h5_size:1.5rem;
+$size1:1.2rem;
+$size2:1rem;
+$size3:0.9rem;
+
+// @mixin baseFont(){}
+// @mixin miniTitlteFont(){}
+// @mixin sloganFont(){}
+// @mixin miniFont(){}
+
+
+// margin-padding
+$m1:#000;
+$m2:#000;
+$m3:#000;
+$m4:#000;
+
+
+

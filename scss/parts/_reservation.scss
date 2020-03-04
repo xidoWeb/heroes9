@@ -1,0 +1,201 @@
+
+.reservation_wrap{position: fixed; z-index:900; bottom:0; left:3vw; box-sizing: border-box; width: 94vw; height:100%; overflow: hidden; overflow-y: hidden; 
+-webkit-overflow-scrolling:touch; display: none;
+   
+
+   &:before, &::before{
+      content:" "; display:block; position:fixed; z-index:-2; top:0; left:50%; margin-left:-50vw;
+      width:100vw; height:100vh; background-color: rgba($blue, 0.97);
+      opacity:0.95; 
+      @include bg($p:65% ,$z:cover){ 
+         background-image: url('../../img/reservation/dungeonTheme_11.png');
+      }
+   }
+
+   &:after, &::after{content:" "; display:block; position:fixed; z-index:-1; top:0; left:50%; margin-left:-50vw; width:100vw; height:100vh; background-color: rgba($darkBlue, 0.85);
+   }
+} 
+
+#reservation{position:relative; width: 100%; height:100%;
+             overflow-y: scroll; padding-top:3rem;  padding-right:5rem; 
+             color:#fff; line-height: 1.2;
+    @include device($tablet){ padding-top: 6rem; /* paddinig-right:1rem; */ }
+
+    .reservation_area{position:relative; padding: 3rem 1rem 10rem; box-sizing:border-box; 
+       width: 100%; height:auto; min-height:150%;  /* background-color: #acc; */}
+
+
+
+   .view{margin-top: 2rem;}
+
+// 사전등록모집 상단 설명
+   .content{margin:auto; margin-bottom:2.5rem; width:90%; height:auto;}
+   @include flag(3.5rem);
+   
+   p{margin:auto; width: 95%; font-size: 1.7rem; letter-spacing:-0.05rem; text-align: center; line-height: 1.4; 
+      margin-top:1rem; margin-bottom: 2rem;
+      @include device($mobile){font-size: 1.1rem; line-height: 1.2;}
+     >em{font-weight: bold; font-style:normal; color:$primary}
+      >span{color:rgba($white, 0.8); padding-top: 2.4rem; border-top:3rem;}
+   }
+}
+
+// 스토어 선택(form)
+
+#registration {margin:auto; width: 100%; max-width:940px; height:auto; padding-top:1rem; 
+   fieldset{width: 100%; height:auto; margin-bottom:2rem;}
+   @include device($tablet){margin:auto; margin-bottom:2rem; min-width:300px;}
+   @include device($mobile){max-width:380px;}
+}
+
+.device_sel{margin:auto; margin-bottom: 2rem; width:10rem; height: 4rem; text-align: center; font-size: 3rem; line-height: 4rem;
+   >li{width:4rem; height:4rem;}
+   >li:last-child{float: right;}
+   label{display: block; width: 100%; height: 100%; border-radius:50%;
+      i{display: block; width: 100%; height: 100%; margin: 0; padding: 0; line-height: 4rem; text-align: center;}
+   }
+   #andSel:checked + label {color:$green; background-color:$white; }
+   #iosSel:checked + label {color:$black; background-color:$white; }
+}
+
+
+.store_choice {margin:auto; position:relative; width: 100%; max-width:700px; height: auto; margin-top:1rem; margin-bottom:4rem;
+    @include device($mobile) {margin-bottom: 2.5rem;}
+  
+      li{position:relative; 
+         float:left; width:12rem; height:4.5rem;
+         &:nth-child(2){position: absolute; margin:auto; left:0; right:0;}
+         @include device($tablet){width:10rem; height:6rem;}
+         // @include device($mobile) {margin-right: 2rem;  width: 25vw; height: 4.5rem; 
+         //    &:nth-child(2){position: static; margin-bottom:4rem;}
+         // }
+         
+         &:last-child{float:right; margin:0;}
+
+         @include device($mobile) {
+            float:none;
+            margin:auto;
+            margin-bottom: 4rem;
+            padding: 0 15vw; box-sizing: border-box;
+            width:100%; height:4.5rem; 
+            &:nth-child(2){height:5rem; position: static; margin-bottom:4rem;}
+         }
+      }
+             
+      
+   input[name="store_choice"]{position: absolute; 
+         width: 0; height: 0; z-index: -1; opacity:0; }
+   label{position:relative; display:block; width: 100%; height: 100%; /* background-color: $black; */
+         border-radius:0.5rem; 
+         
+         // box-shadow:0 0 1rem rgba($white, 0.8); 
+         @include bg($z:contain);
+      &[for="google"] {background-image: url('../../img/reservation/and.svg');}
+      // &[for="apple"]{ background-image: url('../../img/reservation/ios.svg');}
+      &[for="naver"]{ background-image: url('../../img/reservation/naver.svg');}
+      &[for="one"]{ background-image: url('../../img/reservation/one.svg');}
+      } 
+   input:checked+label {
+      filter: drop-shadow(0 0 0.5rem rgba($white, 0.8));
+      @include device($mobile){
+         @include more(before){position: absolute; 
+            width:5rem; height:100%; 
+            left:-4rem; top:0; z-index:100; animation:reser0 1s ease infinite alternate;
+            @include bg{background-image: url('../../img/reservation/btn_02.svg');}
+         }
+         @include more(after){position: absolute; 
+            width:5rem; height:100%;
+            right:-4rem; top:0; z-index:100; animation:reser1 1s ease infinite alternate;
+            @include bg{background-image: url('../../img/reservation/btn_01.svg');}
+         }
+      }
+   }
+
+} // .store_choice
+
+@keyframes reser0 {
+  0% { transform:translate(0) rotateX(0); }
+  100% { transform:translate(-1rem)  rotateX(180deg); }
+}
+@keyframes reser1 {
+  0% { transform:translate(0) rotateX(0); }
+  100% { transform:translate(1rem)  rotateX(180deg); }
+}
+
+.phone_num{width: 100%; height: 4rem; margin-bottom:1rem; text-align: center;
+   input{margin-bottom:1rem; width: 100%; max-width:500px; height: 100%; box-sizing:border-box; background-color:rgba($white, 0.3); border:0; border-bottom:2px solid $white;
+   text-align: center; font-size: 2rem; line-height: 3rem; color:$white;
+   &:focus, &:hover{background-color:rgba($blue, 0.3);}
+  }
+   input::-webkit-input-placeholder{color:rgba($white, 0.5); font-size:1.1rem; text-indent:-1rem;}
+}
+
+.user_info{width: 100%; height:auto; margin-bottom:5rem; text-align: center;}
+#user_info_check{position: absolute; width: 0;height: 0; z-index: -1;}
+label[for="user_info_check"]{font-size: 1.2rem; width: 100%; height:auto;
+   >i{ margin-right: 0.5rem; border-radius:50%; border:2px solid transparent;
+   }
+}
+#user_info_check:checked + label>i {color:$red; border:2px solid $white; 
+   border-radius:50%; background-color:$white;}
+
+.consent_btn{margin-top:0.5rem; margin-left:1rem; padding: 0.5rem 2.3rem; 
+   border-radius:0.3rem; background-color: $white; font-weight: bold; color:$red;}
+
+.submit{margin:auto; margin-bottom: 10rem; width: 70%; height: 7rem;
+       font-size: 2.5rem; font-weight: bold;
+   @include device($tablet){width:90%; height: 4rem; margin-bottom:5rem; font-size: 1.7rem;}
+   >button{width: 100%; height: 100%; background-color: $red; font-size:inherit; }
+}
+
+$s : 180px;
+#reservation .benefits {margin: auto; width:100%; max-width:850px; text-align: center; padding: 0;
+   li{float:left; width:30%; height:auto; font-size: 1.3rem; 
+      &:nth-child(2){position: absolute; left: 0; right: 0; margin:auto;}
+      &:last-child{float:right; margin-right:0;}
+      >.img{width:100%; height:$s; margin-bottom:0.2rem; @include bg($z:contain);}
+      span{line-height: 1.2;
+      @include device($tablet){font-size: 1rem;}
+      }
+      em{font-weight: bold; font-style: normal; color:$primary}
+         &:nth-child(1)>.img{background-image: url('../../img/reservation/ruby_many@2x.png');}
+         &:nth-child(2)>.img{background-image: url('../../img/reservation/eter_many@2x.png');}
+         &:nth-child(3)>.img{background-image: url('../../img/reservation/deck@2x.png');}
+         @include device($full){
+            &:nth-child(1)>.img{background-image: url('../../img/reservation/ruby_many.png');}
+            &:nth-child(2)>.img{background-image: url('../../img/reservation/eter_many@2x.png');}
+            &:nth-child(3)>.img{background-image: url('../../img/reservation/deck@2x.png');}
+         }
+      }
+   }
+
+// @include device($tablet){
+//    $s:22vw; $h: $s/3;
+// .benefits{width:($s * 3 )+($h * 2); text-align: center;
+//    li{margin-right:$h; width:$s; height:40vw; font-size: 1rem;
+//       >.img{width:$s; height:$s; margin-bottom: 1rem; border-width:2px;}
+//       em{font-weight: bold; font-style: normal; color:$primary}
+//       }
+//    }
+// }
+
+#reservation .check{position:relative; margin:auto; margin-bottom: 10rem; width:95vw;  max-width: 940px; font-size: 1.3rem;
+   h3{margin-bottom: 1rem; font-size: 1.3em; font-weight: bold; letter-spacing:0.01rem;}
+   ol{ width:100%; list-style:disc; 
+      >li{list-style-type:inherit; margin-bottom: 0.4rem; line-height: 1.3;}
+   }
+   .guard{font-weight: bold; color:$yellow;}
+
+   @include more(after){position: absolute;  left:0;
+      width:100%; height:3rem; bottom:-8rem; 
+      @include bg($z:contain){background-image: url('../../img/consent/flagpole_01.svg');}
+      @include device($tablet){width:85vw;  bottom:-5rem;}
+   }
+   @include device($tablet){font-size: 1rem;}
+   @include device($mobile){font-size: 0.85rem; letter-spacing:-0.05rem; font-weight:normal;}
+   @include device(360px){font-size: 0.83rem; letter-spacing:-0.1rem ; word-spacing:-0.05rem;}
+}
+
+.close_btn {
+   @include closeBtn{position:fixed; top:auto; bottom:3rem;};
+}
