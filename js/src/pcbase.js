@@ -5,10 +5,17 @@ var gnb = $('#gnb');
 var gnbMenu = $('.menu').find('li').children('a');
 var res = $('.reservation_wrap');
 var resCloseBtn = res.find('.close_btn').children('button');
-// console.log('mobile');
 var consent = $('#consent').parent();
 
+ 
+  var menuBtn = gnb.find('.handheld');
+  var gnbList = gnb.find('.menu').children('li');
+  var gnbLink = gnbList.children('a');
 
+  var res = $('.reservation_wrap');
+
+
+//--///////////////////////
 gnbMenu.on('click', function(){
   $(this).parent('li').siblings().removeClass('action');
   $(this).parent('li').addClass('action');
@@ -21,14 +28,25 @@ $('.impack_check').on('click', function () {
 });
 
 
-    // reservation
-//    var res = $('.reservation_wrap');
-//    var resCloseBtn = res.find('.close_btn').children('button');
-
+// --------------------------------------------------
 resCloseBtn.on('click', function (e) {
   e.preventDefault();
   res.slideUp();
 });
+
+//pc
+ consent.find('.close_btn').children('button').on('click', function (e) {
+   e.preventDefault();
+   consent.slideDown();
+ });
+
+//닫기버튼모바일
+consent.find('.close_btn').on('click', function (e) {
+  e.preventDefault();
+  consent.parent().slideUp();
+});
+
+
 
 
  // intro
@@ -53,10 +71,9 @@ resCloseBtn.on('click', function (e) {
  });
 
 
- consent.find('.close_btn').children('button').on('click', function (e) {
-   e.preventDefault();
-   consent.slideDown();
-   // consent.remove();
- });
+
+
+ // ====================================
+
 
  })(jQuery);

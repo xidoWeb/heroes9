@@ -14,7 +14,7 @@ padding-top:3.5rem; color:$white; line-height:1.2;
  .management{position:relative; margin-top:6rem; width: 100%; height:auto;
 
     &:before,&::before{content:""; display:block; position:absolute; top:-4rem; left:50%; transform: translate(-50%); width:2.5rem; height:2.5rem; 
-    @include bg{background-image: url('../../img/header/SVG/res_point.svg');}
+    @include bg{background-image: url('../img/header/SVG/res_point.svg');}
     }
 
   dl{width: 100%; height:auto; border-bottom:1px solid $white;
@@ -29,7 +29,7 @@ padding-top:3.5rem; color:$white; line-height:1.2;
    width: 100%; height:auto; color:$black;
   h3{width: 100%; text-align: center; color:$white; font-weight: bold; font-size: 1.3rem; margin-top: 1rem; margin-bottom: 2rem;}
 
-  @mixin pol(){content:" "; display:block; position:relative; left:50%; transform: translate(-50%); width:90vw; height:2.2rem;  @include bg{background-image: url('../../img/consent/flagpole.svg');}
+  @mixin pol(){content:" "; display:block; position:relative; left:50%; transform: translate(-50%); width:90vw; height:2.2rem;  @include bg{background-image: url('../img/consent/flagpole.svg');}
     }
 
   &:before, &::before{ @include pol; top:0; transform: translate(-50%) rotate(180deg);}

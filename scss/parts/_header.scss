@@ -19,7 +19,7 @@
   box-shadow:0 0.2rem 0.1rem 0.05rem $black;
   &:after, &::after {
     content:" "; display: block; position: absolute; z-index:-1; top:0; left:0; width: 100%; height: 100%;
-    @include bg($z:cover) { background-image: url('../../img/header/header_bg.png'); 
+    @include bg($z:cover) { background-image: url('../img/header/header_bg.png'); 
     opacity:0.75;}
   }
 }
@@ -27,8 +27,8 @@
 
 // @include device($pcbase){
   h1{float:left; width:150px; height:70px; // margin-left:-15px;
-    >a{background-image: url('../../img/heroes9_logo.svg'); background-repeat: no-repeat; background-position: 50% 50%;
-    &:focus,&:hover{outline:0; transform:scale(1.2); background-image: url('../../img/heroes_logo.png'); background-size: contain; filter:drop-shadow(0 0 0.7rem $white)}
+    >a{background-image: url('../img/heroes9_logo.svg'); background-repeat: no-repeat; background-position: 50% 50%;
+    &:focus,&:hover{outline:0; transform:scale(1.2); background-image: url('../img/heroes_logo.png'); background-size: contain; filter:drop-shadow(0 0 0.7rem $white)}
    }
   }
   #gnb{float:right; width: 900px; height:auto; padding:5px; padding-top: 10px; box-sizing: border-box;
@@ -41,9 +41,9 @@
         &:before,&::before{content:" "; display:block; position:absolute; bottom:50%; left:50%; 
           /* transform:translate(-50%, -1.2rem); */ width:0.8rem; height:1.4rem; 
         animation:infRoll 1.5s infinite alternate;
-        background-image: url("../../img/header/SVG/nav_point.svg"); background-position: 50% 50%; background-repeat: no-repeat;}
+        background-image: url("../img/header/SVG/nav_point.svg"); background-position: 50% 50%; background-repeat: no-repeat;}
         &:after, &::after {content:" "; display:block; position:absolute; top:80%; left:10%; width:80%; height:4px; 
-        background-image: url("../../img/header/SVG/line_t3.svg"); background-repeat: no-repeat; background-position:50% 50%;}
+        background-image: url("../img/header/SVG/line_t3.svg"); background-repeat: no-repeat; background-position:50% 50%;}
       }
       >.impack_check {position: absolute; top: 0; right: 0; margin-right: 0;
         >a{float:right;  line-height:56px; width: 100%; height:65px; font-weight:700; background-color: $red;
@@ -52,7 +52,7 @@
              >i { animation: infRoll2 1.5s infinite alternate; }
           }
         }
-        .icon_key{background-image: url("../../img/header/SVG/res_point.svg");}
+        .icon_key{background-image: url("../img/header/SVG/res_point.svg");}
       }
       a{display:inline; color:$white; padding:12px;}
     }
@@ -63,7 +63,7 @@
 @include device($tablet) {
   #headBox{width: 100%; height: 60px; }
   h1{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:6rem; height:3rem; 
-    >a{background-image: url('../../img/heroes9_logo.svg'); background-repeat: no-repeat; background-position: 50% 50%;}
+    >a{background-image: url('../img/heroes9_logo.svg'); background-repeat: no-repeat; background-position: 50% 50%;}
   }
   #gnb{float:left; width: 40px; height: 40px; padding:5px; box-sizing: border-box;
     > .handheld{display:block; width: 100%; height: 100%;
@@ -95,7 +95,7 @@
     } // .handheld
     .menu_wrap {display: none; position:fixed; width: 100%; height: 100%;  top: 0; left: 0;  padding:5rem 2.5rem; overflow: scroll;
       @include more(before) {position: absolute; top: 0; left: 0; z-index: -1; width: 100%; height: 100%; background-color:$opBlack;}
-      @include more(after){position: absolute; top: 0; left: 0; z-index: -2; width: 100%; height: 100%;  @include bg($z:cover, $p:50% 50%){ background-image: url('../../img/header/menu_bg.jpg');}
+      @include more(after){position: absolute; top: 0; left: 0; z-index: -2; width: 100%; height: 100%;  @include bg($z:cover, $p:50% 50%){ background-image: url('../img/header/menu_bg.jpg');}
     }
       > .menu{ position:relative; width: 100%; height:auto; padding-bottom:15rem;}
     }

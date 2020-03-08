@@ -1,0 +1,42 @@
+
+@font-face {
+  font-family: 'nyz-l';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Eoe_Zno_L.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// title용
+// @font-face {
+//   font-family: 'title';
+//   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_ten@1.2/TTWorinseokboR.woff') format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: 'title'; //'MapoDPPA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoDPPA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "./base/var"; 
+@import "./base/mixin";
+@import './base/reset';
+@import './base/common';
+
+body{width: 100%; overflow-x: hidden; overflow-y:scroll;}
+
+@import './parts/header';
+@import './parts/reservation';
+@import './parts/consent';
+@import './parts/intro';
+@import './parts/base_set';
+@import './parts/event_01';
+// @import './parts/event_02';
+@import './parts/gameStory';
+@import './parts/character';
+@import './parts/footer';
+
+@import './parts/modal'; 

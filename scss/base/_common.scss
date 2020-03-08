@@ -55,9 +55,9 @@
 
 #wrap, .wrapper {
   width: 100%;
-  height:auto;
-  min-height: 90%;
-  margin: auto
+  // height:auto;
+  // min-height: 90%;
+  margin: auto;
 }
 
 .intro{
@@ -68,11 +68,10 @@
   transform:translate(-0.3rem, 0.6rem);
   background-repeat: no-repeat; background-position: 50% 50%;}
 
-.mobile{display: none;}
-@include device($tablet){
-  .mobile{display:block}
+.mobile{display: none;
+@include device($tablet){ display:block }
+@include device($mobile){ display:block }
 }
-
 .corp_str{color:$primary; font-weight: bold;}
 
 .mid_font{font-size:$size2;}

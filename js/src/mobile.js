@@ -36,13 +36,12 @@
     res.slideDown();
   });
 
-  reservation
   resCloseBtn.on('click', function(e){
     e.preventDefault();
     res.slideUp();
   });
 
-  // intro동영상
+/*   // intro동영상
 var mediaArea = $('.media_area');
 var media = mediaArea.find('.media');
 var introVideo = $('#introVideo');
@@ -61,7 +60,7 @@ intro.find('.close_btn').on('click', function (e) {
   introVideo.get(0).pause();
   media.currentTime = 0;
   media.fadeOut();
-});
+}); */
 
 //닫기버튼
 consent.find('.close_btn').on('click', function (e) {

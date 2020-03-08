@@ -8,7 +8,7 @@
       width:100vw; height:100vh; background-color: rgba($blue, 0.97);
       opacity:0.95; 
       @include bg($p:65% ,$z:cover){ 
-         background-image: url('../../img/reservation/dungeonTheme_11.png');
+         background-image: url('../img/reservation/dungeonTheme_11.png');
       }
    }
 
@@ -38,6 +38,7 @@
      >em{font-weight: bold; font-style:normal; color:$primary}
       >span{color:rgba($white, 0.8); padding-top: 2.4rem; border-top:3rem;}
    }
+   p.check_text.action{margin-bottom: 1rem; font-size: 1.2em; font-weight: bold; color:$primary; }
 }
 
 // 스토어 선택(form)
@@ -48,14 +49,33 @@
    @include device($mobile){max-width:380px;}
 }
 
-.device_sel{margin:auto; margin-bottom: 2rem; width:10rem; height: 4rem; text-align: center; font-size: 3rem; line-height: 4rem;
-   >li{width:4rem; height:4rem;}
-   >li:last-child{float: right;}
-   label{display: block; width: 100%; height: 100%; border-radius:50%;
-      i{display: block; width: 100%; height: 100%; margin: 0; padding: 0; line-height: 4rem; text-align: center;}
+.device_sel{margin:auto; margin-top: 4rem; margin-bottom: 3rem; width:100%; max-width:500px; height: 2rem; text-align: center; font-size: 1.5rem; line-height:1.2;
+   >li{width:50%; height:2.5rem; position: relative; line-height: 2rem;
+      box-sizing: border-box; padding:0 2rem;
+      @include more(before){position: absolute; top: 10%; right: -2px; width: 4px; height:80%; background-color:rgba($white,0.5);}
+      
    }
-   #andSel:checked + label {color:$green; background-color:$white; }
-   #iosSel:checked + label {color:$black; background-color:$white; }
+   >li:last-child{float: right; @include more(before){display: none;} }
+   label{display: block; width: 90%; height: 100%;  position: relative; line-height: 1.5em;
+      // i{display:block; position: absolute; bottom:0.5rem; left:0.5rem; width:1.5rem; height:1.5rem; margin: 0; padding: 0;
+      //  @include bg($p:0 50%, $z:auto 100%) { background-image: url('../img/reservation/checkbox.svg'); }
+      //  }
+      i{display:inline-block; width: 1.5rem;height: 1.5rem; 
+         @include bg($p:0 50%, $z:auto 100%){background-image: url('../img/reservation/checkbox.svg');}
+      }
+   }
+   
+   @include device($mobile){font-size: 1rem;}
+   >li:first-child{ label{float:right;} text-align: right;
+      @include device($mobile){padding-right:1rem; padding-left:0;}
+   }
+   >li:last-child{ label{float:left; width:80%}  text-align-last: left;
+       @include device($mobile){padding-left:1rem; padding-right:0;}
+   }
+   input[name="os"]:checked + label{border-bottom: 1px solid $white;}
+   input[name="os"]:checked + label>i{background-position: 100% 0;}
+   // #andSel:checked + label>i {background-position: 100% 0;}
+   // #iosSel:checked + label>i {background-position: 100% 0;}
 }
 
 
@@ -72,12 +92,8 @@
          
          &:last-child{float:right; margin:0;}
 
-         @include device($mobile) {
-            float:none;
-            margin:auto;
-            margin-bottom: 4rem;
-            padding: 0 15vw; box-sizing: border-box;
-            width:100%; height:4.5rem; 
+         @include device($mobile) { float:none; margin:auto; margin-bottom: 4rem; 
+            padding: 0 15vw; box-sizing: border-box; width:100%; height:4.5rem; 
             &:nth-child(2){height:5rem; position: static; margin-bottom:4rem;}
          }
       }
@@ -90,10 +106,10 @@
          
          // box-shadow:0 0 1rem rgba($white, 0.8); 
          @include bg($z:contain);
-      &[for="google"] {background-image: url('../../img/reservation/and.svg');}
-      // &[for="apple"]{ background-image: url('../../img/reservation/ios.svg');}
-      &[for="naver"]{ background-image: url('../../img/reservation/naver.svg');}
-      &[for="one"]{ background-image: url('../../img/reservation/one.svg');}
+      &[for="google"] {background-image: url('../img/reservation/and.svg');}
+      // &[for="apple"]{ background-image: url('../img/reservation/ios.svg');}
+      &[for="naver"]{ background-image: url('../img/reservation/naver.svg');}
+      &[for="one"]{ background-image: url('../img/reservation/one.svg');}
       } 
    input:checked+label {
       filter: drop-shadow(0 0 0.5rem rgba($white, 0.8));
@@ -101,12 +117,12 @@
          @include more(before){position: absolute; 
             width:5rem; height:100%; 
             left:-4rem; top:0; z-index:100; animation:reser0 1s ease infinite alternate;
-            @include bg{background-image: url('../../img/reservation/btn_02.svg');}
+            @include bg{background-image: url('../img/reservation/btn_02.svg');}
          }
          @include more(after){position: absolute; 
             width:5rem; height:100%;
             right:-4rem; top:0; z-index:100; animation:reser1 1s ease infinite alternate;
-            @include bg{background-image: url('../../img/reservation/btn_01.svg');}
+            @include bg{background-image: url('../img/reservation/btn_01.svg');}
          }
       }
    }
@@ -132,17 +148,21 @@
 
 .user_info{width: 100%; height:auto; margin-bottom:5rem; text-align: center;}
 #user_info_check{position: absolute; width: 0;height: 0; z-index: -1;}
-label[for="user_info_check"]{font-size: 1.2rem; width: 100%; height:auto;
-   >i{ margin-right: 0.5rem; border-radius:50%; border:2px solid transparent;
+label[for="user_info_check"]{font-size: 1.2rem; width: 100%; height:auto; padding-bottom: 0.2rem;
+   >i{ width: 1.5rem; height: 1.5rem; display:inline-block; margin-right: 0.5rem; border-radius:50%;
+      @include bg($p:0 50%, $z:auto 100%){background-image: url('../img/reservation/checkbox.svg');}
+      vertical-align: middle;
    }
+   &+button{margin-top: 0;}
 }
-#user_info_check:checked + label>i {color:$red; border:2px solid $white; 
-   border-radius:50%; background-color:$white;}
+
+#user_info_check:checked+label{border-bottom: 1px solid $white;}
+#user_info_check:checked + label>i {color:$red; border-radius:50%; background-position: 100% 0;}
 
 .consent_btn{margin-top:0.5rem; margin-left:1rem; padding: 0.5rem 2.3rem; 
    border-radius:0.3rem; background-color: $white; font-weight: bold; color:$red;}
 
-.submit{margin:auto; margin-bottom: 10rem; width: 70%; height: 7rem;
+.submit{margin:auto; margin-bottom: 4rem; width: 70%; height: 7rem;
        font-size: 2.5rem; font-weight: bold;
    @include device($tablet){width:90%; height: 4rem; margin-bottom:5rem; font-size: 1.7rem;}
    >button{width: 100%; height: 100%; background-color: $red; font-size:inherit; }
@@ -158,13 +178,13 @@ $s : 180px;
       @include device($tablet){font-size: 1rem;}
       }
       em{font-weight: bold; font-style: normal; color:$primary}
-         &:nth-child(1)>.img{background-image: url('../../img/reservation/ruby_many@2x.png');}
-         &:nth-child(2)>.img{background-image: url('../../img/reservation/eter_many@2x.png');}
-         &:nth-child(3)>.img{background-image: url('../../img/reservation/deck@2x.png');}
+         &:nth-child(1)>.img{background-image: url('../img/reservation/ruby_many@2x.png');}
+         &:nth-child(2)>.img{background-image: url('../img/reservation/eter_many@2x.png');}
+         &:nth-child(3)>.img{background-image: url('../img/reservation/deck@2x.png');}
          @include device($full){
-            &:nth-child(1)>.img{background-image: url('../../img/reservation/ruby_many.png');}
-            &:nth-child(2)>.img{background-image: url('../../img/reservation/eter_many@2x.png');}
-            &:nth-child(3)>.img{background-image: url('../../img/reservation/deck@2x.png');}
+            &:nth-child(1)>.img{background-image: url('../img/reservation/ruby_many.png');}
+            &:nth-child(2)>.img{background-image: url('../img/reservation/eter_many@2x.png');}
+            &:nth-child(3)>.img{background-image: url('../img/reservation/deck@2x.png');}
          }
       }
    }
@@ -188,7 +208,7 @@ $s : 180px;
 
    @include more(after){position: absolute;  left:0;
       width:100%; height:3rem; bottom:-8rem; 
-      @include bg($z:contain){background-image: url('../../img/consent/flagpole_01.svg');}
+      @include bg($z:contain){background-image: url('../img/consent/flagpole_01.svg');}
       @include device($tablet){width:85vw;  bottom:-5rem;}
    }
    @include device($tablet){font-size: 1rem;}

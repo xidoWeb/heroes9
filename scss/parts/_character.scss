@@ -1,15 +1,110 @@
 
-#gameCharacter{position: relative; height:auto;
-  @include flag($fc:$opBlue, $h:3.5rem, $fs:0.2rem 0.2rem 0.4rem $white, $bd:3px solid $opBlue);
-}
+#gameCharacter{position: relative; height:auto; padding-left: 0; padding-right: 0; padding-bottom:0rem; overflow: hidden;
+  @include flag($fc:$opBlue, $h:3.5rem, $fs:none, $bd:3px solid $opBlue);
 
+  &.dark{
+    .insignia,
+    .insignia h2{color:$primary; border-color:$primary;}
+  }
+  
   .background_box{position: absolute; top: 0;left: 0; width: 100%; height: 100%; z-index: -1;
     .theme{position: absolute; top: 0; left: 0; width: 100%; height: 100%; @include bg($z:cover); }
-    .light_team{ background-image: url('../../img/character/lightTheme.png');}
-    .darken_team{ background-image: url('../../img/character/darkTheme.png'); display: none;}
+    .light_team{ background-image: url('../img/character/lightTheme.png');}
+    // .darken_team{ background-image: url('../img/character/darkTheme.png'); display: none;}
+  }
+  
+  .game_content{width:100%;  height: 70vh;}
+  
+  // slidebtn 위치이동
+  .slide_btn{
+    @include device($mobile){bottom:20%; top:auto;}
   }
 
-  $count:3; $size:200px;
+  $s1:1.5rem;
+  // 인디케이터 영역
+  .indicator{bottom:1rem;
+    &{width: 55vw; max-width: 500px; height:$s1; border-radius:$s1; padding:0.4rem $s1;
+      color:$white; text-align: center;
+    @include device($mobile){padding:0.4rem; width:15.3125rem}
+    }
+
+    ul{display: inline-block; width:85%;
+      @include device($mobile){float: none; display:inline-block; width:100%;}
+      >li{float: none; display:inline-block; width:$s1; height:$s1; border-radius:$s1;
+        &:last-child{margin-right: 0;}
+        @include device($mobile){float:none; display:inline-block; margin-right:0.5rem;}
+
+        button{width: 100%; height: 100%; border-radius:$s1; background-color: $white;}
+      }
+    }
+
+    p{float:right; font-weight: bold; line-height:$s1;
+      @include device($mobile){width: 0; height: 0; overflow: hidden; position: absolute; z-index: -1;}
+    }
+
+  }
+  
+  // 각 list 틀영역------------------------
+  $count:7;
+.game_area {margin:auto; width: 100%; height: 100%;
+  .character_infomation{width:100%; height: 100%; position: relative; z-index: 100;
+    // background-color: #faf;
+  li{position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+    @include device(400px){  & >.ch_info_area .img{width: 100%; height: 130%; background-position: 80% 0;} }
+    }
+  }
+}
+li:nth-child(3)>.ch_info_area .img { @include device(460px){width:85%;} }
+li:nth-child(5)>.ch_info_area .img { @include device(480px){width: 90%;} }
+li:nth-child(6)>.ch_info_area .img{height:105%;
+  @include device($tablet){width:65%; height:120%; bottom:0;}
+  @include device(720px){width:70%; height:120%; bottom:0;}
+  @include device($mobile){width:80%; height:120%; bottom:0;}
+  @include device(510px){width:90%; height:110%; bottom:0;}
+}
+
+
+
+.ch_info_area{width: 100%; height: 100%; 
+  .img{position: absolute; bottom:0; width: 50%; height: 100%; background-repeat: no-repeat; background-position: 100% 0;
+      @include device($tablet){width: 60%;}
+      @include device($mobile){width: 75%;}
+      @include device(400px){width: 130%; }
+    }
+  .ch_info{width: 50%; height: 80%; color:$white; box-sizing: border-box; padding:7% 7rem; padding-right: 10rem;
+      font-size: 0.8rem; text-align: left; 
+      position: absolute; bottom: 0; left: 40%; 
+    @include bg($z:cover, $p:0 0){background-image: url('../img/character/bgl2.png');}
+    @include device(1300px){left:45%; width: 70%; height: 78%; padding-right: 30%; padding-top: 15%;}
+    @include device($tablet){left:40%; width:72%; height:100%; pading-top:15%; padding-left:11%; padding-right: 25%;}
+    @include device($mobile){left:36%; width:70%; height:115%; bottom:-5%; padding-top:9.5rem; padding-left: 23%; padding-right: 10%; background-size:auto 120%;}
+    @include device(400px){left:-25%; width:150%; height:65%; bottom:0%; padding:10% 30%;  padding-top:3rem; background-position: 50% 0; background-size: cover;}
+    // @include device($mobile){left:32%; width:77%; height:110%; bottom:-5%; padding-top:12rem; padding-left: 25%; padding-right: 15%; background-size:auto 120%;}
+    // @include device(400px){left:10%; width:83%; height:70%; bottom:-5%; padding-top:24%; padding-left: 23%; padding-right: 2%;}
+    }
+    dt{font-size: 1.1rem;}
+    dd{color:rgba($white,0.8); margin-bottom: 0.3rem;
+      @include device($tablet){font-size: 1rem;}
+      @include device(780px){line-height:1.2; letter-spacing:-0.05rem;}
+      @include device($mobile){font-size: 0.95rem; line-height: 1.2; letter-spacing: -0.1rem;}
+      @include device(440px){font-size: 0.85rem; letter-spacing:-0.1rem; line-height: 1.2;}
+    }
+    .ck_name{border: 1px solid $white; border-left: 0; border-right: 0; padding:0.2rem 0;
+      margin:0.3rem 0; color:$white;}
+    .ck_n{font-size: 1.2rem; font-weight: bold; color:$primary;}
+    .type{margin-left: 0.3rem;}
+}
+
+
+} // #gameCharacter
+  
+  
+  
+
+
+
+/*
+  $count:3; $size:170px;
   .game_area{position:relative; margin:auto; width: 80%; height: 70vh; overflow: hidden;
     @include device($tablet){width: 100%;}
     
@@ -17,24 +112,27 @@
         padding-top:3rem; box-sizing: border-box;
         @include device($mobile){padding-top: 0;}
       >li{position:relative; width:100% / $count;  @include bg($z:cover); 
-        .team_type{font-size: 1.8rem; color:$white; position: absolute; bottom:3.5rem; left:0; right:0; margin:auto; 
+        .team_type{font-size: 1.8rem; color:$white; position: absolute; bottom:1.5rem; left:0; right:0; margin:auto; 
           text-shadow:0 0 0.3rem $opBlue;
+          @include device($tablet){bottom:0;}
+          @include device($mobile){bottom:1rem;}
           @include device(340px){font-size: 1.5rem;} }
         .character_icon{width: 100%; height: 100%;
           li{position:relative; display:inline-block; float:none; margin:3vw;margin-top:0; margin-bottom:1.2vw; width:$size; height:$size + 35px; transition:all 0.2s ease; // background-color: $darkBlue;
             @include device($tablet){width: $size/3*2; height: $size - 10px;}
-            @include device($mobile){width: $size/3*2; height: $size/5*4; margin-bottom: 1rem;}
+            @include device($mobile){width: $size/5*3; height: $size/8*6; margin-bottom: 1rem;}
             @include device(340px){margin-bottom:0.5rem; width:$size/2; height: $size/2;}
 
             >button{width:$size; height:$size; border-radius:50%; font-size: 1.2rem;
                 background-color:rgba($primary, 0); transition:all 0.5s ease;
                 // 임시캐릭터 이미지 첨부
-              @include bg($z:cover){background-image: url('../../img/character/Loa.png');}
+              @include bg($z:cover){background-image: url('../img/character/Loa.png');}
               @include device($tablet){width: $size/3*2; height: $size/3*2;}
-              @include device(400px){width: $size/4*2; height: $size/4*2; font-size: 1rem;}
+              @include device($mobile){width: $size/5*3; height: $size/5*3; margin-bottom: 1rem;}
+              @include device(340px){width: $size/4*2; height: $size/4*2; font-size: 1rem;}
 
              >span{display: block; position: absolute; width: 100%; left:0; bottom:0; text-align: center;
-               /* background-color: $opBlue; */ padding:0.2rem 0; color:$darkBlue; font-weight: bold;
+               padding:0.2rem 0; color:$darkBlue; font-weight: bold;
               @include device($tablet){padding:0.1rem 0;}
               } // span 
             }
@@ -65,7 +163,7 @@
     .ch_info{position:absolute; top: 5%; left: 35%; 
           width: 60%; height: 90%; padding-top: 10rem; padding-left: 5rem; paddinig-right:3rem;
           text-align: left; box-sizing: border-box; color:$white;
-          @include bg($z:contain,$p:0){background-image: url('../../img/character/bgl2.png');}
+          @include bg($z:contain,$p:0){background-image: url('../img/character/bgl2.png');}
      @include device($mobile){width:100%; left:20%; padding: 5rem;
         padding-left: 5.4rem; padding-right: 3.3rem; background-size: cover; }
      .team_set{font-size:1.5rem; color:$white; font-weight: bold; box-sizing: border-box; margin-bottom:1rem;
@@ -90,3 +188,4 @@
     }
   } 
 }
+*/
